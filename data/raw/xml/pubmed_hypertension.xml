@@ -1,0 +1,34 @@
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>29876543</PMID>
+      <Article>
+        <Journal>
+          <Title>Hypertension</Title>
+        </Journal>
+        <ArticleTitle>
+          Regulation of Blood Pressure and Pathogenesis of Hypertension
+        </ArticleTitle>
+        <Abstract>
+          <AbstractText Label="PHYSIOLOGY">
+            Blood pressure is regulated by neural, renal, and hormonal mechanisms.
+          </AbstractText>
+          <AbstractText Label="PATHOLOGY">
+            Dysregulation of these systems contributes to the development of hypertension.
+          </AbstractText>
+          <AbstractText Label="CLINICAL_RELEVANCE">
+            Hypertension is a major risk factor for cardiovascular disease.
+          </AbstractText>
+        </Abstract>
+      </Article>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName>Hypertension</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName>Blood Pressure</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+  </PubmedArticle>
+</PubmedArticleSet>

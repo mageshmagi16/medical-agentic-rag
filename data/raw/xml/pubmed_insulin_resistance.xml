@@ -1,0 +1,34 @@
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>28765432</PMID>
+      <Article>
+        <Journal>
+          <Title>Endocrine Reviews</Title>
+        </Journal>
+        <ArticleTitle>
+          Molecular Mechanisms of Insulin Resistance
+        </ArticleTitle>
+        <Abstract>
+          <AbstractText Label="CELLULAR_MECHANISMS">
+            Insulin resistance arises from impaired insulin receptor signaling in target tissues.
+          </AbstractText>
+          <AbstractText Label="MOLECULAR_PATHWAYS">
+            Inflammatory signaling and lipid accumulation disrupt insulin action.
+          </AbstractText>
+          <AbstractText Label="CONSEQUENCES">
+            Insulin resistance is a central factor in the development of type 2 diabetes.
+          </AbstractText>
+        </Abstract>
+      </Article>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName>Insulin Resistance</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName>Signal Transduction</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+  </PubmedArticle>
+</PubmedArticleSet>

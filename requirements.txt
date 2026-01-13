@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+openai
+sentence-transformers
+chromadb
+rank-bm25
+numpy
+pymupdf
+lxml
+python-dotenv

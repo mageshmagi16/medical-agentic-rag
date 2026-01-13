@@ -1,0 +1,34 @@
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>30123456</PMID>
+      <Article>
+        <Journal>
+          <Title>The Lancet Diabetes &amp; Endocrinology</Title>
+        </Journal>
+        <ArticleTitle>
+          Global Epidemiology of Obesity and Associated Metabolic Disorders
+        </ArticleTitle>
+        <Abstract>
+          <AbstractText Label="OVERVIEW">
+            Obesity prevalence has increased substantially across all age groups worldwide.
+          </AbstractText>
+          <AbstractText Label="ASSOCIATION">
+            Obesity is strongly associated with insulin resistance and metabolic syndrome.
+          </AbstractText>
+          <AbstractText Label="IMPLICATIONS">
+            Public health strategies targeting obesity may reduce metabolic disease burden.
+          </AbstractText>
+        </Abstract>
+      </Article>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName>Obesity</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName>Metabolic Syndrome</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+  </PubmedArticle>
+</PubmedArticleSet>

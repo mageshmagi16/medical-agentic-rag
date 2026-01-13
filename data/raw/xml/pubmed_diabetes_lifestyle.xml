@@ -1,0 +1,34 @@
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>32987654</PMID>
+      <Article>
+        <Journal>
+          <Title>The American Journal of Clinical Nutrition</Title>
+        </Journal>
+        <ArticleTitle>
+          Lifestyle Factors and Their Role in the Development of Type 2 Diabetes
+        </ArticleTitle>
+        <Abstract>
+          <AbstractText Label="INTRODUCTION">
+            Lifestyle behaviors significantly influence metabolic health.
+          </AbstractText>
+          <AbstractText Label="FINDINGS">
+            Physical inactivity and unhealthy dietary patterns increase diabetes risk.
+          </AbstractText>
+          <AbstractText Label="PUBLIC_HEALTH">
+            Population-level lifestyle interventions may reduce disease incidence.
+          </AbstractText>
+        </Abstract>
+      </Article>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName>Life Style</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName>Diabetes Mellitus, Type 2</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+  </PubmedArticle>
+</PubmedArticleSet>
