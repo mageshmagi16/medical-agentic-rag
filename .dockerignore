@@ -1,0 +1,15 @@
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+venv/
+.env.*
+.git/
+.gitignore
+
+.cache/
+.cache/chroma/
+
+node_modules/

@@ -1,30 +1,36 @@
 import chromadb
 from chromadb.config import Settings
-import uuid
+
 
 class ChromaStore:
-    def __init__(self, path="./chroma_db"):
+    def __init__(self, persist_dir: str):
+        # Create Chroma client
         self.client = chromadb.Client(
-            Settings(persist_directory=path, anonymized_telemetry=False)
-        )
-        self.collection = self.client.get_or_create_collection("medical_docs")
-
-    def add(self, docs, embeddings):
-        for doc, emb in zip(docs, embeddings):
-            self.collection.add(
-                ids=[str(uuid.uuid4())],
-                documents=[doc["text"]],
-                embeddings=[emb],
-                metadatas=[doc["metadata"]]
+            Settings(
+                persist_directory=persist_dir,
+                anonymized_telemetry=False
             )
-
-    def query(self, embedding, k=5):
-        res = self.collection.query(
-            query_embeddings=[embedding],
-            n_results=k,
-            include=["documents", "metadatas"]
         )
-        return [
-            {"text": t, "metadata": m}
-            for t, m in zip(res["documents"][0], res["metadatas"][0])
-        ]
+
+        # IMPORTANT: create or load collection
+        self.collection = self.client.get_or_create_collection(
+            name="medical_docs"
+        )
+
+    def query(self, query: str, k: int = 5):
+        results = self.collection.query(
+            query_texts=[query],
+            n_results=k
+        )
+
+        documents = results.get("documents", [[]])[0]
+        metadatas = results.get("metadatas", [[]])[0]
+
+        formatted = []
+        for text, meta in zip(documents, metadatas):
+            formatted.append({
+                "text": text,
+                "metadata": meta or {}
+            })
+
+        return formatted

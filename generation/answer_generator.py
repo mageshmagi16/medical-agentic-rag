@@ -2,40 +2,51 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
+# -------------------------------------------------
+# Load environment variables EARLY
+# -------------------------------------------------
 load_dotenv()
 
+# -------------------------------------------------
+# Initialize OpenAI client
+# -------------------------------------------------
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def generate_answer(question: str, retrieved_chunks: list) -> str:
-    if not retrieved_chunks:
-        return "I don't know. No relevant information was found."
+# -------------------------------------------------
+# Answer generation
+# -------------------------------------------------
+def generate_answer(question, retrieved_docs):
+    """
+    question: str
+    retrieved_docs: list of dicts with 'text' key
+    """
 
-    context = ""
-    for i, (text, meta) in enumerate(retrieved_chunks):
-        context += f"[{i+1}] {text}\n"
+    # Build grounded context
+    context = "\n\n".join(
+        f"- {doc['text']}" for doc in retrieved_docs
+    )
 
     prompt = f"""
 You are a medical information assistant.
-Answer ONLY using the provided context.
-Do NOT add external knowledge.
-If the answer is not in the context, say "I don't know".
 
-CONTEXT:
+Answer the question using ONLY the context below.
+Do NOT say you lack information.
+Do NOT mention documents explicitly.
+Use simple, clear medical language.
+
+Context:
 {context}
 
-QUESTION:
+Question:
 {question}
 
-ANSWER:
+Answer:
 """
 
-    response = client.chat.completions.create(
+    response = client.responses.create(
         model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": "You provide factual, non-diagnostic medical information."},
-            {"role": "user", "content": prompt}
-        ],
+        input=prompt,
         temperature=0.2
     )
 
-    return response.choices[0].message.content.strip()
+    return response.output_text.strip()

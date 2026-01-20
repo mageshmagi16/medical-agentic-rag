@@ -21,4 +21,7 @@ def retrieve(query: str, top_k: int = 5):
         n_results=top_k
     )
 
-    return list(zip(results["documents"][0], results["metadatas"][0]))
+    docs = results.get("documents", [[]])[0]
+    metas = results.get("metadatas", [[]])[0]
+
+    return list(zip(docs, metas))

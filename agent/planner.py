@@ -1,21 +1,13 @@
-from openai import OpenAI
-import os
+class AgentPlanner:
+    """
+    Very simple planner for Agentic RAG.
+    Decides what steps are needed for a question.
+    """
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
-def plan(question, context):
-    prompt = f"""
-Question:
-{question}
-
-Context so far:
-{context}
-
-Decide next action:
-retrieve or answer
-"""
-    return client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0
-    ).choices[0].message.content.lower()
+    def plan(self, question: str) -> dict:
+        # For now, we always retrieve + answer
+        return {
+            "intent": "medical_information",
+            "needs_retrieval": True,
+            "needs_generation": True
+        }

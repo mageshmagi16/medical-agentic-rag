@@ -9,3 +9,5 @@ numpy
 pymupdf
 lxml
 python-dotenv
+httpx
+tenacity
