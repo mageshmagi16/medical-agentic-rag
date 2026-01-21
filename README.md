@@ -36,12 +36,16 @@ User → FastAPI UI/API → AgentExecutor
 medical-agentic-rag/
 - agent/
 - retrieval/
+- ingestion/
 - vectorstore/
 - embeddings/
 - generation/
 - safety/
 - api/
+- scripts/
 - data/
+- monitoring/
+- evalutation/
 - Dockerfile
 - requirements.txt
 - .env
