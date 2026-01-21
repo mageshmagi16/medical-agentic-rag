@@ -5,7 +5,7 @@ class AgentPlanner:
     """
 
     def plan(self, question: str) -> dict:
-        # For now, we always retrieve + answer
+        # For now, always retrieve + answer
         return {
             "intent": "medical_information",
             "needs_retrieval": True,

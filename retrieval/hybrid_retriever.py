@@ -5,7 +5,6 @@ class HybridRetriever:
         self.chroma = chroma_store
 
     def retrieve(self, query: str, k: int = 5):
-        # FIX: use k instead of top_k
         results = self.chroma.query(query, k=k)
 
         formatted = []

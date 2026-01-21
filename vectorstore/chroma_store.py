@@ -12,7 +12,7 @@ class ChromaStore:
             )
         )
 
-        # IMPORTANT: create or load collection
+        # create or load collection
         self.collection = self.client.get_or_create_collection(
             name="medical_docs"
         )

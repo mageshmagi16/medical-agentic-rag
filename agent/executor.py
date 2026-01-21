@@ -22,19 +22,19 @@ class AgentExecutor:
         used_fallback = False
 
         # -------------------------------------------------
-        # 1. Plan
+        # Plan
         # -------------------------------------------------
         plan = self.planner.plan(question)
         trace["plan"] = plan
 
         # -------------------------------------------------
-        # 2. Retrieve
+        # Retrieve
         # -------------------------------------------------
         retrieved_docs = self.retriever.retrieve(question, k=5)
         trace["initial_retrieval_count"] = len(retrieved_docs)
 
         # -------------------------------------------------
-        # 3. Retry if weak retrieval
+        # Retry if weak retrieval
         # -------------------------------------------------
         if not retrieved_docs or len(retrieved_docs) < 2:
             expanded_query = f"{question} causes mechanisms risk factors"
@@ -46,7 +46,7 @@ class AgentExecutor:
         trace["final_retrieval_count"] = len(retrieved_docs)
 
         # -------------------------------------------------
-        # 4. Final fallback (never empty)
+        # Final fallback (never empty)
         # -------------------------------------------------
         if not retrieved_docs:
             used_fallback = True
@@ -64,17 +64,17 @@ class AgentExecutor:
         trace["used_fallback"] = used_fallback
 
         # -------------------------------------------------
-        # 5. Generate answer
+        # Generate answer
         # -------------------------------------------------
         answer = generate_answer(question, retrieved_docs)
 
         # -------------------------------------------------
-        # 6. Store in memory
+        # Store in memory
         # -------------------------------------------------
         self.memory.add(question, answer)
 
         # -------------------------------------------------
-        # 7. Confidence score (CORE)
+        # Confidence score (CORE)
         # -------------------------------------------------
         if used_fallback:
             self.last_confidence = 0.40
@@ -88,12 +88,12 @@ class AgentExecutor:
         trace["confidence"] = self.last_confidence
 
         # -------------------------------------------------
-        # 8. Save trace for debug / UI
+        # Save trace for debug / UI
         # -------------------------------------------------
         self.last_trace = trace
 
         # -------------------------------------------------
-        # DEBUG OUTPUT (you asked where to check this)
+        # DEBUG OUTPUT
         # -------------------------------------------------
         print("Confidence:", self.last_confidence)
         print("Trace:", trace)

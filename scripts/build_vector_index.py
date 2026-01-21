@@ -3,7 +3,7 @@ import json
 from sentence_transformers import SentenceTransformer
 from chromadb import PersistentClient
 
-# -------- Paths (absolute) --------
+# -------- Paths --------
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 CHUNKS_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "chunks.json")
 VECTOR_DB_DIR = os.path.join(PROJECT_ROOT, "data", "vectorstore", "chroma")
