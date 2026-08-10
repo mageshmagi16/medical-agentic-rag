@@ -10,7 +10,7 @@ This project goes beyond a basic RAG pipeline by introducing:
 - Dockerized deployment
 - UI + API access
 
----
+---   
 
 ## What This System Does
 - Accepts medical questions via web UI or API
